@@ -66,7 +66,7 @@ void conectaMQTT(){
       if (client.connect(clientId.c_str())){
         Serial.println("MQTT conectado!");
         // se conectado, anuncia isso com um tópico especifico desse dispositivo
-        String topicoStatusConexao = "autocore/conexao/";
+        String topicoStatusConexao = "medson/conexao/";
         topicoStatusConexao.concat(WiFi.macAddress());
         client.publish(topicoStatusConexao.c_str(), "1");
         // ... e se increve nos tópicos de interesse, no caso aqui apenas um
